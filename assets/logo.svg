@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 116" role="img" aria-label="Pneumàtics Guilleries">
+  <title>Pneumàtics Guilleries</title>
+
+  <!-- dibuix de banda de rodadura, cantonada superior dreta -->
+  <g fill="#111318">
+    <g transform="skewX(-14)">
+      <rect x="252" y="4"  width="13" height="9" rx="1.5"/>
+      <rect x="269" y="4"  width="13" height="9" rx="1.5"/>
+      <rect x="286" y="4"  width="13" height="9" rx="1.5"/>
+      <rect x="303" y="4"  width="13" height="9" rx="1.5"/>
+
+      <rect x="256" y="17" width="13" height="9" rx="1.5"/>
+      <rect x="273" y="17" width="13" height="9" rx="1.5"/>
+      <rect x="290" y="17" width="13" height="9" rx="1.5"/>
+      <rect x="307" y="17" width="13" height="9" rx="1.5"/>
+
+      <rect x="260" y="30" width="13" height="9" rx="1.5"/>
+      <rect x="277" y="30" width="13" height="9" rx="1.5"/>
+      <rect x="294" y="30" width="13" height="9" rx="1.5"/>
+      <rect x="311" y="30" width="13" height="9" rx="1.5"/>
+    </g>
+  </g>
+
+  <!-- paraula superior -->
+  <text x="6" y="49"
+        font-family="'Segoe UI', system-ui, Arial, sans-serif"
+        font-size="42" font-weight="700" font-style="italic"
+        letter-spacing="-1" fill="#17358F">pneumàtics</text>
+
+  <!-- barra groga -->
+  <g transform="skewX(-14)">
+    <rect x="12" y="57" width="292" height="11" fill="#FBD200"/>
+  </g>
+
+  <!-- paraula inferior -->
+  <text x="6" y="108"
+        font-family="'Segoe UI', system-ui, Arial, sans-serif"
+        font-size="50" font-weight="800" font-style="italic"
+        letter-spacing="0" fill="#17358F">GUILLERIES</text>
+</svg>
