@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pneumaticsguilleries.cat/sitemap.xml
+Sitemap: https://acab33.github.io/pneumatics-guilleries/sitemap.xml

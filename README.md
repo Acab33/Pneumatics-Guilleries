@@ -15,8 +15,11 @@ avis-legal.html     Avís legal, privacitat i galetes
 assets/style.css    Tots els estils
 assets/logo.svg     Logotip de la capçalera
 assets/favicon.svg  Icona de la pestanya
+assets/og.jpg       Imatge de previsualització en compartir (1200×630)
+tools/make-og.py    Script que genera assets/og.jpg
 robots.txt          Indexació
 sitemap.xml         Mapa del lloc per a Google
+.nojekyll           Desactiva el processat Jekyll a GitHub Pages
 ```
 
 ## PENDENT de confirmar amb el tiet
@@ -33,6 +36,25 @@ Aquestes dades venen de directoris públics i **s'han de verificar abans de publ
 | Marques de pneumàtics | genèric | secció "El taller" |
 
 També estaria bé substituir el bloc de degradat de la portada per **fotos reals del taller**.
+
+### Imatge per compartir (WhatsApp, Facebook)
+
+`assets/og.jpg` (1200 × 630 px) és el que surt quan algú envia l'enllaç per WhatsApp. Està
+generada a partir del logotip amb `tools/make-og.py`:
+
+```
+python tools/make-og.py
+```
+
+Necessita Pillow (`pip install pillow`) i tipografies Segoe UI, o sigui que s'ha d'executar a
+Windows. **No cal tornar-la a generar mai** tret que canviïn el telèfon, l'adreça o el logo.
+
+Quan hi hagi fotos del taller, una foto real de la façana o de la nau funcionarà encara
+millor que el logo: només cal desar-la com a `assets/og.jpg` a 1200 × 630 px.
+
+> Després de canviar aquesta imatge, WhatsApp i Facebook en guarden una còpia en memòria
+> cau durant dies. Per forçar-ne l'actualització, passa la URL pel
+> [Sharing Debugger de Facebook](https://developers.facebook.com/tools/debug/).
 
 ### Logotip
 
@@ -57,7 +79,26 @@ almenys 600 px d'amplada.
 Estan definits com a variables CSS a dalt de `assets/style.css`. Si es canvia el blau allà,
 canvia a tot el web.
 
-## Com publicar-la (gratis i per sempre)
+## Estat actual
+
+Publicada provisionalment a GitHub Pages:
+**https://acab33.github.io/pneumatics-guilleries/**
+
+Tots els enllaços interns són **relatius**, de manera que el web funciona igual des d'un
+subdirectori (GitHub Pages) que des de l'arrel d'un domini propi. Quan es canviï de domini
+només cal tocar les URL absolutes, que són poques i estan totes en aquests llocs:
+
+- `index.html` i `es/index.html` → `canonical`, `hreflang`, `og:url`, `og:image` i el bloc
+  `application/ld+json`
+- `robots.txt` → línia `Sitemap:`
+- `sitemap.xml` → totes les `<loc>`
+
+Cerca i reemplaça `https://acab33.github.io/pneumatics-guilleries` pel domini nou i llest.
+
+El fitxer `.nojekyll` evita que GitHub Pages processi el web amb Jekyll: no cal per res i
+així el desplegament és més ràpid i previsible.
+
+## Com publicar-la amb domini propi
 
 ### 1. Comprar el domini
 
@@ -75,20 +116,16 @@ Registradors recomanats per a `.cat` (uns 20–40 €/any):
 > **Activa la renovació automàtica** i posa la targeta del tiet — és l'única cosa que cal
 > vigilar en tot el projecte.
 
-### 2. Publicar (allotjament gratuït)
+### 2. Apuntar-hi el web
 
-Recomanat: **Cloudflare Pages** (gratis sense límit de temps, ràpid, HTTPS automàtic).
+Si es continua amb GitHub Pages: *Settings → Pages → Custom domain*, s'hi posa el domini, i
+al registrador es creen els registres DNS que GitHub indiqui. Es genera un fitxer `CNAME` al
+repositori. Marca **Enforce HTTPS**.
 
-1. Entra a [dash.cloudflare.com](https://dash.cloudflare.com) → *Workers & Pages* → *Create* → *Pages*
-2. *Upload assets* → arrossega la carpeta sencera d'aquest projecte
-3. Nom del projecte: `pneumatics-guilleries` → *Deploy*
-4. *Custom domains* → afegeix `pneumaticsguilleries.cat` i `www.pneumaticsguilleries.cat`
-5. Al registrador, canvia els servidors DNS pels que t'indiqui Cloudflare
+Alternativa igual de vàlida: **Cloudflare Pages** ([dash.cloudflare.com](https://dash.cloudflare.com)
+→ *Workers & Pages* → *Create* → *Pages* → *Upload assets*, arrossegant la carpeta sencera).
 
-Alternatives igual de vàlides: [Netlify](https://www.netlify.com) (arrossegar carpeta a
-*Sites* → *Deploy manually*) o GitHub Pages.
-
-El certificat HTTPS es renova sol. No hi ha res més a fer.
+En qualsevol dels dos casos el certificat HTTPS es renova sol. No hi ha res més a fer.
 
 ### 3. Després de publicar
 

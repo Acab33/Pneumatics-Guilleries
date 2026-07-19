@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.pneumaticsguilleries.cat/</loc>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.pneumaticsguilleries.cat/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.pneumaticsguilleries.cat/es/"/>
+    <loc>https://acab33.github.io/pneumatics-guilleries/</loc>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://acab33.github.io/pneumatics-guilleries/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://acab33.github.io/pneumatics-guilleries/es/"/>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.pneumaticsguilleries.cat/es/</loc>
-    <xhtml:link rel="alternate" hreflang="ca" href="https://www.pneumaticsguilleries.cat/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.pneumaticsguilleries.cat/es/"/>
+    <loc>https://acab33.github.io/pneumatics-guilleries/es/</loc>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://acab33.github.io/pneumatics-guilleries/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://acab33.github.io/pneumatics-guilleries/es/"/>
     <priority>0.8</priority>
   </url>
 </urlset>
